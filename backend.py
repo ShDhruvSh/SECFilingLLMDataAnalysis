@@ -39,9 +39,12 @@ def read_text_from_file(file_path):
     return text
 
 def generate_query(company_ticker):
+    if company_ticker not in os.listdir("./sec-edgar-filings"):
+        dl.get("10-K", company_ticker, after='1994-12-31', before='2024-01-01')
+
     directory = "./sec-edgar-filings/{}/10-K".format(company_ticker)
 
-    parts = ["Using the following 29 years worth of SEC-Edgar 10-K fillings for the company {}, give me specific analytics and insights about the company: financial analysis (to track metrics like revenue over time), sentiment analysis, and specific observations.".format(company_ticker)]
+    parts = ["Using the following 29 years worth of SEC-Edgar 10-K fillings for the company {}, give me specific analytics and insights about the company: financial analysis (to track metrics like revenue over time), sentiment analysis, and specific observations. Do not show me how to do it, do the best you can yourself. Do not include any disclaimers.".format(company_ticker)]
 
     for folder in os.listdir(directory):
         folder_path = directory+"/"+folder
@@ -61,8 +64,9 @@ def generate_query(company_ticker):
             if not analyze:
                 analyze = re.search(r'Company Stock Performance.{20000}', content, re.DOTALL)
             if not analyze:
-                analyze = re.search(r"Item *5.{20000}", content, re.DOTALL)
-
+                analyze = re.search(r"Item *5.{20000}|Item&#160;5.{20000}", content, re.DOTALL)
+            if not analyze:
+                continue
             analyze = analyze.group()[:20000]
             print(analyze)
 
@@ -83,7 +87,7 @@ def ticker_analysis():
     ]
     print(parts)
     response = model.generate_content(messages, request_options={"timeout": 600})
-    return to_markdown(response)
+    return response.text
 
 if __name__ == '__main__':  
    app.run()
