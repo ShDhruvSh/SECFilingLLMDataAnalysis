@@ -1,0 +1,7 @@
+pip3 install -U sec-edgar-downloader
+pip3 install -q -U google-generativeai
+pip3 install -q -U google-generativeai --upgrade
+pip3 install python-dotenv
+pip3 install fpdf
+pip3 install pip --upgrade
+pip3 install pyopenssl --upgrade
