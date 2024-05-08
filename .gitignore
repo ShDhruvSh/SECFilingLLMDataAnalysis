@@ -1,3 +1,4 @@
-/sec-edgar-filings
-.env
+/backend/sec-edgar-filings
+/backend/.env
+/frontend/.env
 __pycache__/

@@ -1,0 +1,13 @@
+{
+    "AWSEBDockerrunVersion": "1",
+    "Image": {
+      "Name": "392330578075.dkr.ecr.us-east-1.amazonaws.com/secfilingllmdataanalysis-backend",
+      "Update": "true"
+    },
+    "Ports": [
+      {
+        "ContainerPort": 8080,
+        "HostPort": 8080
+      }
+    ]
+  }
