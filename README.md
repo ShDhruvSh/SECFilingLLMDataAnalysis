@@ -9,3 +9,7 @@ Additionally, sentiment analysis on the data enables investors to assess market 
 I developed this application using a Python Flask backend and a React.js frontend. The Python backend was chosen for its compatibility with the SEC download library and Gemini LLM API, facilitating easy access to essential data. On the frontend, React.js was selected to create a visually appealing and efficient user interface that seamlessly integrates with the backend logic.
 
 For deployment, I leveraged various AWS tools. The frontend was deployed using CloudFront and S3, while the backend was deployed on Elastic Beanstalk. Docker was employed to enable deployment of the Flask backend on Elastic Beanstalk, with potential for future Kubernetes integration.
+
+## Demo Video
+
+https://github.com/ShDhruvSh/SECFilingLLMDataAnalysis/assets/67289288/eee0ab2d-c025-4fdd-ab76-c8475eb9571b
