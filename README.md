@@ -13,3 +13,56 @@ For deployment, I leveraged various AWS tools. The frontend was deployed using C
 ## Demo Video
 
 https://github.com/ShDhruvSh/SECFilingLLMDataAnalysis/assets/67289288/eee0ab2d-c025-4fdd-ab76-c8475eb9571b
+
+## Running the App Locally
+
+Follow these steps to run the application on your local machine:
+
+1. **Clone the Repository**:  
+   Clone the repository from GitHub using the following command:
+   ```
+   git clone https://github.com/ShDhruvSh/SECFilingLLMDataAnalysis
+   ```
+
+2. **Set up Environment Variables**:  
+   - Create an `.env` file in the frontend directory and add the following line:
+     ```
+     REACT_APP_API_URL="http://localhost:5000/"
+     ```
+   - Create an `.env` file in the backend directory and add your Gemini API key and email in the following format:
+     ```
+     GEMINI_API_KEY=<your_gemini_api_key>
+     USER_EMAIL=<your_email>
+     ```
+
+3. **Install Dependencies**:  
+   Navigate to the root directory of the project and run the following command to install backend dependencies:
+   ```
+   pip install -r requirements.txt
+   ```
+
+4. **Run Flask Server**:  
+   Start the Flask server by running the following command in the backend directory:
+   ```
+   python backend.py
+   ```
+   or
+   ```
+   flask run --debug
+   ```
+
+6. **Install and Run React Server**:  
+   Navigate to the frontend directory and install frontend dependencies:
+   ```
+   npm install
+   ```
+   Once dependencies are installed, start the React server with the following command:
+   ```
+   npm start
+   ```
+
+7. **Access the Application**:  
+   Once both servers are running, access the application by opening your web browser and navigating to `http://localhost:3000/`.
+
+8. **Interact with the App**:  
+   You can now interact with the application locally, explore its features, and analyze the insights it provides.
